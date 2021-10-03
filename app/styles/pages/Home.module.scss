@@ -1,0 +1,100 @@
+@use "../abstract/" as *;
+@use "../system";
+
+.homeGrid {
+	direction: rtl;
+	display: grid;
+	grid-auto-rows: minmax(1fr, max-content);
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"navbar"
+		"categories"
+		"hero"
+		"sale"
+		"special"
+		"browse"
+		"why-us"
+		"recommended"
+		"special-2"
+		"scroll"
+		"footer"
+		"copyright";
+
+	background-color: hslac($background-color);
+
+	// all items be 100%;
+	& > * {
+		// width: 100vw;
+		padding: 0 system.$mobile-padding;
+
+		@include desktop {
+			padding: (system.$default-gap * 2) system.$desktop-padding;
+		}
+	}
+}
+
+.hero {
+	grid-area: hero;
+	display: flex;
+	gap: system.$default-gap;
+	flex-wrap: wrap;
+
+	@include desktop {
+		flex-wrap: nowrap;
+	}
+
+	& > *:nth-child(1) {
+		flex: 1 1 75%;
+	}
+
+	& > *:nth-child(2) {
+		flex: 1 1 25%;
+	}
+
+	&Slider {
+		background-image: url("/images/ameen-almayuf-OQ4tJVXMCYM-unsplash.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: system.$default-radius;
+		box-shadow: $box-shadow;
+	}
+	// &Product {
+	// }
+}
+
+.sale {
+	grid-area: sale;
+}
+
+.special {
+	grid-area: special;
+}
+
+.browse {
+	grid-area: browse;
+}
+
+.why-us {
+	grid-area: why-us;
+}
+
+.recommended {
+	grid-area: special;
+}
+
+.special-2 {
+	grid-area: special-2;
+}
+
+.scroll {
+	grid-area: scroll;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+.copyright {
+	grid-area: copyright;
+}

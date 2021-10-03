@@ -1,0 +1,101 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.card {
+	background-color: hsl(0, 0%, 100%);
+	border-radius: system.$default-radius;
+	box-shadow: $box-shadow;
+	max-width: 40rem; // control maximum size
+
+	& > * {
+		padding: math.div(system.$default-gap, 2) system.$default-gap;
+	}
+	// border: 1px solid black;
+
+	&Header {
+		padding-top: system.$default-gap;
+
+		.banner {
+			display: flex;
+			color: #fff;
+			padding: 0.75rem;
+			margin-right: -(system.$default-gap);
+			padding-right: system.$default-gap;
+			border-top-left-radius: math.div(system.$default-radius, 3);
+			border-bottom-left-radius: math.div(system.$default-radius, 3);
+			font-size: 1.2rem;
+			min-width: max-content;
+			max-width: 35%;
+			display: block;
+
+			&Off {
+				@extend .banner;
+				background-color: hslac($clr-orange);
+			}
+
+			&Special {
+				@extend .banner;
+				background-color: hslac($clr-blue);
+			}
+
+			&Popular {
+				@extend .banner;
+				background-color: hslac($clr-yellow);
+			}
+		}
+	}
+
+	&Body {
+		& > * {
+			padding-bottom: system.$default-gap;
+		}
+		.imageBox {
+			min-height: 20rem;
+			position: relative;
+		}
+		img {
+			height: 100%;
+		}
+		.category {
+			display: block;
+			font-size: 1.4rem;
+			color: hslac($clr-gray);
+		}
+		.title {
+			display: block;
+			font-size: 1.6rem;
+		}
+	}
+	&Footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.price {
+			display: flex;
+			justify-content: flex-end;
+			gap: math.div(system.$default-gap, 3);
+			line-height: 2.8rem;
+
+			.number {
+				font-size: 2.8rem;
+				font-weight: 500;
+			}
+
+			.currency {
+				font-size: 1.4rem;
+				font-weight: 500;
+			}
+		}
+		.cartButton {
+			background-color: hslac($clr-green);
+			color: hsl(0 0% 0%);
+			border-radius: math.div(system.$default-radius, 3);
+			padding: 2rem 4.5rem;
+			border: none;
+			clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+			cursor: pointer;
+		}
+	}
+}
