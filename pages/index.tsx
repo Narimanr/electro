@@ -5,6 +5,9 @@ import Head from 'next/head'
 import Card, { Banner, iCard } from '@/components/modules/Card/Card';
 import ProductRow from '@/components/layout/ProductRow/ProductRow';
 
+import { iSpecialCard } from '@/components/modules/SpecialCard/SpecialCard';
+import SpecialRow from '@/components/layout/SpecialRow/SpecialRow';
+
 import styles from '../app/styles/pages/Home.module.scss';
 
 const Home: NextPage = () => {
@@ -38,7 +41,20 @@ const Home: NextPage = () => {
       category: 'لوازم جانبی موبایل',
       price: '۹،۱۶۲،۰۰۰'
     }
-  ]
+  ];
+
+  const DUMMY_SPECIAL_ITEMS: iSpecialCard[] = [
+    {
+      title: 'ساعت‌های هوشمند سامسونگ',
+      subtitle: 'ساعت چنده؟',
+      image: '/images/samsung-gear-s3.png',
+    },
+    {
+      title: 'هدفون استودیوی آدیو تکنیکا',
+      subtitle: 'صدایی که تا حالا نشنیدی',
+      image: '/images/ath-m50x_01a.png',
+    },
+  ];
 
   return (
     <>
@@ -68,6 +84,11 @@ const Home: NextPage = () => {
         <div className={styles.sale}>
           <ProductRow title="تخفیفات هیجان انگیز" items={DUMMY_ITEMS} />
         </div>
+
+        <div className={styles.special}>
+          <SpecialRow items={DUMMY_SPECIAL_ITEMS} />
+        </div>
+      
       </main>
 
      </>

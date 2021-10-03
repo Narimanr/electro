@@ -18,9 +18,9 @@ export const enum Banner  {
 
 
 
-export default function Card(product: iCard) {
+export default function Card(props: iCard) {
   var bannerElement;
-      switch (product.banner) {
+      switch (props.banner) {
         case Banner.Off:
           bannerElement = (
             <div className={cardStyle.bannerOff}>
@@ -52,20 +52,20 @@ export default function Card(product: iCard) {
           </div>
           <div className={cardStyle.cardBody}>
             <div className={cardStyle.imageBox}>
-                  <Image src={product.image} alt="product image" layout="fill" objectFit="contain"/>
+                  <Image src={props.image} alt="product image" layout="fill" objectFit="contain"/>
             </div>
             <span className={cardStyle.category}>
-              {product.category}
+              {props.category}
             </span>
             <span className={cardStyle.title}>
-              {product.title}
+              {props.title}
             </span>
           </div>
           <div className={cardStyle.cardFooter}>
             <button className={cardStyle.cartButton}></button>
             <div className={cardStyle.price}>
                 <span className={cardStyle.number}>
-                    {product.price}    
+                    {props.price}    
                 </span>
               <span className={cardStyle.currency}>تومان</span>
             </div>

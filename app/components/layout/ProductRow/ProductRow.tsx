@@ -9,12 +9,12 @@ interface Props {
 
 export default function ProductRow(props: Props) {
     return (
-        <section className={rowStyle.ProductRow}>
+        <section className={rowStyle.productRow}>
             <h2>
                 {props.title}
             </h2>
 
-            <div className={rowStyle.RowDisplay}>
+            <div className={rowStyle.rowDisplay}>
                 {props.items.map(item => {
                     return (
                         <Card key={item.id} id={item.id} title={item.title} category={item.category} price={item.price} image={item.image} banner={Banner.Off}  />

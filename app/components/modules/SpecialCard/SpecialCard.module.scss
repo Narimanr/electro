@@ -1,0 +1,96 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.special {
+	background-color: hsl(0, 0%, 100%);
+	border-radius: system.$default-radius;
+	box-shadow: $box-shadow;
+	color: #fff;
+	font-size: 2rem;
+	position: relative;
+	overflow: hidden;
+	// max-width: 40rem; // control maximum size
+	padding: math.div(system.$default-gap, 2) system.$default-gap;
+	z-index: 5;
+
+	& > * {
+		padding: math.div(system.$default-gap, 2) system.$default-gap;
+	}
+
+	.bubble {
+		border-radius: 50%;
+		position: absolute;
+		z-index: 1;
+	}
+
+	&:nth-of-type(1) {
+		background: linear-gradient(
+			to right,
+			hslac($clr-blue, 0.5) 15%,
+			hslac($clr-blue)
+		);
+
+		.bubble {
+			width: 30rem;
+			height: 30rem;
+			top: -30%;
+			right: -10%;
+			background: linear-gradient(
+				to right,
+				hslac($clr-blue, 0.5) 15%,
+				hslac($clr-blue)
+			);
+		}
+	}
+
+	&:nth-of-type(2) {
+		background: linear-gradient(
+			to right,
+			hslac($clr-green, 0.5) 15%,
+			hslac($clr-green)
+		);
+
+		.bubble {
+			width: 32.5rem;
+			height: 32.5rem;
+			bottom: -30%;
+			left: -10%;
+			background: linear-gradient(
+				to right,
+				hslac($clr-green, 0.5) 15%,
+				hslac($clr-green)
+			);
+		}
+	}
+
+	&Header {
+		z-index: 10 !important;
+		position: relative;
+	}
+
+	&Body {
+		position: relative;
+		z-index: 10 !important;
+		.imageBox {
+			min-height: 20rem;
+			position: relative;
+			margin-top: -6rem;
+		}
+	}
+
+	&Footer {
+		span {
+			display: block;
+		}
+	}
+
+	span {
+		display: block;
+		&.title {
+			font-size: 2.8rem;
+			margin-top: 2rem;
+		}
+	}
+}

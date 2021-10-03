@@ -1,0 +1,11 @@
+@use "/app/styles/system";
+
+.specialRow {
+	display: flex;
+	flex-direction: row;
+	gap: system.$default-gap;
+
+	> * {
+		flex-basis: 100%;
+	}
+}

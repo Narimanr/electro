@@ -1,12 +1,12 @@
 @use "/app/styles/system";
 
-.ProductRow {
+.productRow {
 	h2 {
 		font-size: 2.8rem;
 		margin-bottom: system.$default-gap;
 	}
 
-	.RowDisplay {
+	.rowDisplay {
 		display: flex;
 		flex-direction: row;
 		gap: system.$default-gap;
