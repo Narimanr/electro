@@ -3,10 +3,11 @@ import Head from 'next/head'
 
 // Layouts and Components
 import Card, { Banner, iCard } from '@/components/modules/Card/Card';
-import ProductRow from '@/components/layout/ProductRow/ProductRow';
-
 import { iSpecialCard } from '@/components/modules/SpecialCard/SpecialCard';
+
+import ProductRow from '@/components/layout/ProductRow/ProductRow';
 import SpecialRow from '@/components/layout/SpecialRow/SpecialRow';
+import ProductGrid from '@/components/layout/ProductGrid/ProductGrid';
 
 import styles from '../app/styles/pages/Home.module.scss';
 
@@ -18,14 +19,16 @@ const Home: NextPage = () => {
       title: 'هدفون بی‌سیم اپل مدل ایرپاد پرو',
       image: '/images/airpods-71zny7BTRlL._AC_SL1500.jpg',
       category: 'لوازم جانبی موبایل',
-      price: '۵،۰۰۰،۰۰۰'
+      price: '۵۰۰،۰۰۰',
+      off: '۶۵۰،۰۰۰'
     },
     {
       id: '2',
       title: 'پایه موبایل برند لمیکال مدل ۲',
       image: '/images/Lamical-61dpRC+gl3L._AC_SL1500.jpg',
       category: 'لوازم جانبی موبایل',
-      price: '۱،۱۴۵،۰۰۰'
+      price: '۱،۱۴۵،۰۰۰',
+      
     },
     {
       id: '3',
@@ -87,6 +90,10 @@ const Home: NextPage = () => {
 
         <div className={styles.special}>
           <SpecialRow items={DUMMY_SPECIAL_ITEMS} />
+        </div>
+
+        <div className={styles.browse}>
+          <ProductGrid title="برترین‌ها" items={DUMMY_ITEMS} />
         </div>
       
       </main>

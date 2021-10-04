@@ -1,0 +1,21 @@
+@use "/app/styles/system";
+
+.productGrid {
+	h2 {
+		font-size: 2.8rem;
+		margin-bottom: system.$default-gap;
+	}
+
+	.gridDisplay {
+		display: grid;
+		gap: system.$default-gap * 2;
+		grid-template-columns: repeat(4, minmax(100px, 1fr));
+		grid-auto-rows: auto;
+		grid-template-rows: auto;
+		justify-items: center;
+
+		& > * {
+			width: 100%; // make cards span to full width
+		}
+	}
+}

@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import Script  from 'next/script';
+import Image from 'next/image';
 import cardStyle from './Card.module.scss';
 
 export interface iCard {
@@ -6,6 +7,7 @@ export interface iCard {
     category: string,
     title: string,
     price: string,
+    off?: string,
     image: string,
     banner?: string
 };
@@ -44,7 +46,9 @@ export default function Card(props: iCard) {
           break;
         default:
           bannerElement = null;
-    };
+  };
+
+
     return (
        <div className={cardStyle.card}>
           <div className={cardStyle.cardHeader}>
@@ -62,16 +66,18 @@ export default function Card(props: iCard) {
             </span>
           </div>
           <div className={cardStyle.cardFooter}>
-            <button className={cardStyle.cartButton}></button>
-            <div className={cardStyle.price}>
-                <span className={cardStyle.number}>
-                    {props.price}    
-                </span>
+          <button className={cardStyle.cartButton}></button>
+         
+          <div className={cardStyle.price}>
+            <span className={cardStyle.old}>
+              {props.off}
+            </span>
+            <div className={cardStyle.current}>
+              <span className={cardStyle.number}>{ props.price }</span>
               <span className={cardStyle.currency}>تومان</span>
             </div>
+          </div>
         </div>
-              
-              
-            </div>
+      </div>
     );
 }
