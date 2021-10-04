@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 // Layouts and Components
 import Card, { Banner, iCard } from '@/components/modules/Card/Card';
-import { iSpecialCard } from '@/components/modules/SpecialCard/SpecialCard';
+import { iSpecialCard, Colors } from '@/components/modules/SpecialCard/SpecialCard';
 
 import ProductRow from '@/components/layout/ProductRow/ProductRow';
 import SpecialRow from '@/components/layout/SpecialRow/SpecialRow';
@@ -51,11 +51,27 @@ const Home: NextPage = () => {
       title: 'ساعت‌های هوشمند سامسونگ',
       subtitle: 'ساعت چنده؟',
       image: '/images/samsung-gear-s3.png',
+      color: Colors.Blue
     },
     {
       title: 'هدفون استودیوی آدیو تکنیکا',
       subtitle: 'صدایی که تا حالا نشنیدی',
       image: '/images/ath-m50x_01a.png',
+    },
+  ];
+
+   const DUMMY_SPECIAL_ITEMS_2: iSpecialCard[] = [
+    {
+      title: 'ماوس گیمینگ ریزر سری دث ادر',
+      subtitle: 'برای رقابت آماده باش',
+      image: '/images/razer-mouse.png',
+      color: Colors.Cyan
+    },
+    {
+      title: 'پرینتر اچ پی مدل لیزر جت',
+      subtitle: 'مناسب برای هر جا',
+      image: '/images/hp-printer.png',
+      color: Colors.Orange
     },
   ];
 
@@ -94,6 +110,35 @@ const Home: NextPage = () => {
 
         <div className={styles.browse}>
           <ProductGrid title="برترین‌ها" items={DUMMY_ITEMS} />
+        </div>
+
+        <div className={styles.why}>
+          <div className={styles.whyBackground}>
+            <div className={styles.whyText}>
+              <p>بیش از ۱۵۰۰ نفر در ۱۵ سال به ما اعتماد کردند</p>
+              <span>دلیل این انتخاب چه بوده؟</span>
+              <ul>
+                <li>تضیمن قیمت</li>
+                <li>تضیمن کیفیت</li>
+                <li>تضیمن ارسال</li>
+                <li>تضیمن سلامت</li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.whyOverlay}>
+          </div>
+        </div>
+
+        <div className={styles.recommended}>
+          <ProductRow title="پیشنهاد شده برای شما" items={DUMMY_ITEMS} />
+        </div>
+
+        <div className={styles.specialAgain}>
+          <SpecialRow items={DUMMY_SPECIAL_ITEMS_2} />
+        </div>
+
+        <div className={styles.scroll}>
+          
         </div>
       
       </main>

@@ -12,7 +12,7 @@ export default function SpecialRow(props: SpecialProps) {
         <section className={rowStyle.specialRow}>
             {props.items.map(item => {
                 return (
-                    <SpecialCard key={item.title} title={item.title} subtitle={item.subtitle} image={item.image} />
+                    <SpecialCard key={item.title} title={item.title} subtitle={item.subtitle} image={item.image} color={item.color} />
                 );
             }
             )}

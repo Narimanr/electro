@@ -13,7 +13,7 @@
 		"sale"
 		"special"
 		"browse"
-		"why-us"
+		"why"
 		"recommended"
 		"special-2"
 		"scroll"
@@ -75,15 +75,61 @@
 	grid-area: browse;
 }
 
-.why-us {
-	grid-area: why-us;
+.why {
+	grid-area: why;
+	padding: 0;
+	position: relative;
+	margin-top: system.$default-gap * 3;
+
+	&Background {
+		background: linear-gradient(
+				to right,
+				hslac($clr-cyan, 0.6) 70%,
+				hslac($clr-cyan, 1)
+			),
+			url("/images/omid-armin-qjAUQD3APSQ-unsplash.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: #fff;
+		padding: system.$default-gap system.$desktop-padding;
+	}
+
+	&Text {
+		display: flex;
+		flex-direction: column;
+		font-size: 2.8rem;
+
+		p {
+			font-size: 2rem;
+			margin: system.$default-gap 0;
+		}
+
+		ul {
+			display: grid;
+			gap: system.$default-gap * 2;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&Overlay {
+		background: url("/images/pngkey.com-indian-students-png-images-3638423.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 40rem;
+		width: 42.5rem;
+		bottom: 0;
+		left: system.$desktop-padding;
+		position: absolute;
+		z-index: 10;
+	}
 }
 
 .recommended {
-	grid-area: special;
+	grid-area: recommended;
 }
 
-.special-2 {
+.specialAgain {
 	grid-area: special-2;
 }
 
