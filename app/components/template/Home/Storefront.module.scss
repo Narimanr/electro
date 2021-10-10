@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @use "/app/styles/abstract/" as *;
 @use "/app/styles/system";
 
@@ -96,26 +98,34 @@
 			gap: system.$default-gap * 2;
 			grid-template-columns: repeat(1, 1fr);
 			font-size: 2rem;
+			list-style: none;
 
 			@include desktop {
 				grid-template-columns: repeat(2, 1fr);
 				font-size: inherit;
 			}
+			li {
+				display: flex;
+				align-items: center;
+				gap: math.div(system.$default-gap, 2);
+
+				i {
+					color: hslac($clr-green);
+				}
+			}
 		}
 	}
 
 	&Overlay {
-		background: url("/images/pngkey.com-indian-students-png-images-3638423.png");
-		background-size: cover;
-		background-repeat: no-repeat;
-		height: 30rem;
-		width: 32.5rem;
-		bottom: 0;
-		left: system.$mobile-padding;
-		position: absolute;
-		z-index: 10;
+		display: none;
 
 		@include desktop {
+			background: url("/images/pngkey.com-indian-students-png-images-3638423.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: absolute;
+			z-index: 10;
+			display: block;
 			height: 40rem;
 			width: 42.5rem;
 			bottom: 0;

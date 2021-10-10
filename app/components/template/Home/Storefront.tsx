@@ -51,10 +51,22 @@ export default function Storefront(props: PageProps) {
               <p>بیش از ۱۵۰۰ نفر در ۱۵ سال به ما اعتماد کردند</p>
               <span>دلیل این انتخاب چه بوده؟</span>
               <ul>
-                <li>تضیمن قیمت</li>
-                <li>تضیمن کیفیت</li>
-                <li>تضیمن ارسال</li>
-                <li>تضیمن سلامت</li>
+                <li>
+                  <i className='bx bxs-check-shield'></i>
+                  <span>تضیمن قیمت</span>
+                </li>
+                <li>
+                  <i className='bx bxs-check-shield'></i>
+                  <span>تضیمن کیفیت</span>
+                </li>
+                <li>
+                  <i className='bx bxs-check-shield'></i>
+                  <span>تضیمن سلامت</span>
+                </li>
+                <li>
+                  <i className='bx bxs-check-shield'></i>
+                  <span>تضیمن ارسال</span>
+                </li>
               </ul>
             </div>
           </div>
