@@ -1,17 +1,32 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-// Layouts and Components
-import Card, { Banner, iCard } from '@/components/modules/Card/Card';
-import { iSpecialCard, Colors } from '@/components/modules/SpecialCard/SpecialCard';
+import  { iCard } from '@/element/Card/Card';
+import { iSpecialCard, Colors } from '@/element/SpecialCard/SpecialCard';
+import { Slide } from '@/components/element/Carousel/Carousel';
 
-import ProductRow from '@/components/layout/ProductRow/ProductRow';
-import SpecialRow from '@/components/layout/SpecialRow/SpecialRow';
-import ProductGrid from '@/components/layout/ProductGrid/ProductGrid';
-
-import styles from '../app/styles/pages/Home.module.scss';
+import Storefront from '@/template/Home/Storefront';
 
 const Home: NextPage = () => {
+
+  const DUMMY_SLIDES: Slide[] = [
+    {
+      id: '1',
+      url: "/images/ameen-almayuf-OQ4tJVXMCYM-unsplash.jpg"
+    },
+    {
+      id: '2',
+      url: "/images/daniel-romero-q-RQba-XCgU-unsplash.jpg"
+    },
+    {
+      id: '3',
+      url: "/images/omid-armin-aV3c3oJ9hZM-unsplash.jpg"
+    },
+    {
+      id: '4',
+      url: "/images/balazs-ketyi-mQFUoE6dtpY-unsplash.jpg"
+    }
+  ];
 
   const DUMMY_ITEMS: iCard[] = [
     {
@@ -83,66 +98,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.homeGrid}>
-        <div className={styles.hero}>
-          <div className={styles.heroSlider}>
-            
-          </div>
-          <div className={styles.heroProduct}>
-            <Card
-              id="1"
-              category="کیف و کاور موبایل"
-              title="قاب محافظ سیلیکونی سامسونگ مناسب برای گوشی سامسونگ S21"
-              price="۱۴۹،۰۰۰"
-              image="/images/samsung-case-5151hc1ZTFS._AC_SL1500_.jpg"
-              banner={Banner.Popular}
-            />
-          </div>
-        </div>
-      
-        <div className={styles.sale}>
-          <ProductRow title="تخفیفات هیجان انگیز" items={DUMMY_ITEMS} />
-        </div>
-
-        <div className={styles.special}>
-          <SpecialRow items={DUMMY_SPECIAL_ITEMS} />
-        </div>
-
-        <div className={styles.browse}>
-          <ProductGrid title="برترین‌ها" items={DUMMY_ITEMS} />
-        </div>
-
-        <div className={styles.why}>
-          <div className={styles.whyBackground}>
-            <div className={styles.whyText}>
-              <p>بیش از ۱۵۰۰ نفر در ۱۵ سال به ما اعتماد کردند</p>
-              <span>دلیل این انتخاب چه بوده؟</span>
-              <ul>
-                <li>تضیمن قیمت</li>
-                <li>تضیمن کیفیت</li>
-                <li>تضیمن ارسال</li>
-                <li>تضیمن سلامت</li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.whyOverlay}>
-          </div>
-        </div>
-
-        <div className={styles.recommended}>
-          <ProductRow title="پیشنهاد شده برای شما" items={DUMMY_ITEMS} />
-        </div>
-
-        <div className={styles.specialAgain}>
-          <SpecialRow items={DUMMY_SPECIAL_ITEMS_2} />
-        </div>
-
-        <div className={styles.scroll}>
-          
-        </div>
-      
-      </main>
-
+      <Storefront slides={DUMMY_SLIDES} items={DUMMY_ITEMS} specialItems={DUMMY_SPECIAL_ITEMS} specialItemsAgain={DUMMY_SPECIAL_ITEMS_2} />
      </>
   )
 }

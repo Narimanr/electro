@@ -1,10 +1,11 @@
-@use "../abstract/" as *;
-@use "../system";
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
 
-.homeGrid {
+.StorefrontGrid {
 	direction: rtl;
 	display: grid;
-	grid-auto-rows: minmax(1fr, max-content);
+	// grid-auto-rows: minmax(1fr, max-content);
+	grid-auto-rows: auto;
 	grid-template-columns: 1fr;
 	grid-template-areas:
 		"navbar"
@@ -25,7 +26,7 @@
 	// all items be 100%;
 	& > * {
 		// width: 100vw;
-		padding: 0 system.$mobile-padding;
+		padding: (system.$default-gap * 2) system.$mobile-padding;
 
 		@include desktop {
 			padding: (system.$default-gap * 2) system.$desktop-padding;
@@ -35,32 +36,6 @@
 
 .hero {
 	grid-area: hero;
-	display: flex;
-	gap: system.$default-gap;
-	flex-wrap: wrap;
-
-	@include desktop {
-		flex-wrap: nowrap;
-	}
-
-	& > *:nth-child(1) {
-		flex: 1 1 75%;
-	}
-
-	& > *:nth-child(2) {
-		flex: 1 1 25%;
-	}
-
-	&Slider {
-		background-image: url("/images/ameen-almayuf-OQ4tJVXMCYM-unsplash.jpg");
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		border-radius: system.$default-radius;
-		box-shadow: $box-shadow;
-	}
-	// &Product {
-	// }
 }
 
 .sale {
@@ -77,8 +52,8 @@
 
 .why {
 	grid-area: why;
-	padding: 0;
 	position: relative;
+	padding: 0;
 	margin-top: system.$default-gap * 3;
 
 	&Background {
@@ -92,23 +67,41 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		color: #fff;
-		padding: system.$default-gap system.$desktop-padding;
+		padding: system.$default-gap system.$mobile-padding;
+
+		@include desktop {
+			padding: system.$default-gap system.$desktop-padding;
+		}
 	}
 
 	&Text {
 		display: flex;
 		flex-direction: column;
-		font-size: 2.8rem;
+		font-size: 2.4rem;
+
+		@include desktop {
+			font-size: 2.8rem;
+		}
 
 		p {
-			font-size: 2rem;
+			font-size: 1.8rem;
 			margin: system.$default-gap 0;
+
+			@include desktop {
+				font-size: 2rem;
+			}
 		}
 
 		ul {
 			display: grid;
 			gap: system.$default-gap * 2;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(1, 1fr);
+			font-size: 2rem;
+
+			@include desktop {
+				grid-template-columns: repeat(2, 1fr);
+				font-size: inherit;
+			}
 		}
 	}
 
@@ -116,12 +109,19 @@
 		background: url("/images/pngkey.com-indian-students-png-images-3638423.png");
 		background-size: cover;
 		background-repeat: no-repeat;
-		height: 40rem;
-		width: 42.5rem;
+		height: 30rem;
+		width: 32.5rem;
 		bottom: 0;
-		left: system.$desktop-padding;
+		left: system.$mobile-padding;
 		position: absolute;
 		z-index: 10;
+
+		@include desktop {
+			height: 40rem;
+			width: 42.5rem;
+			bottom: 0;
+			left: system.$desktop-padding;
+		}
 	}
 }
 

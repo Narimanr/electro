@@ -1,11 +1,22 @@
+@use "/app/styles/abstract/" as *;
 @use "/app/styles/system";
 
 .specialRow {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	gap: system.$default-gap;
 
+	@include desktop {
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+
 	> * {
-		flex-basis: 100%;
+		flex: 1 1 100%;
+		max-width: calc(100vw - (system.$mobile-padding * 4));
+
+		@include desktop {
+			max-width: auto;
+		}
 	}
 }

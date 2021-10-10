@@ -10,7 +10,14 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	// max-width: 40rem; // control maximum size
+	min-width: 0;
+	// max-width: 90vw;
+
+	@include desktop {
+		max-width: 40rem;
+		min-width: 35rem;
+		min-height: 50rem;
+	}
 
 	& > * {
 		padding: math.div(system.$default-gap, 2) system.$default-gap;
@@ -28,10 +35,13 @@
 			padding-right: system.$default-gap;
 			border-top-left-radius: math.div(system.$default-radius, 3);
 			border-bottom-left-radius: math.div(system.$default-radius, 3);
-			font-size: 1.2rem;
-			min-width: max-content;
+			font-size: 1.6rem;
 			max-width: 35%;
 			display: block;
+
+			@include desktop {
+				font-size: 1.2rem;
+			}
 
 			&Off {
 				@extend .banner;
@@ -51,22 +61,49 @@
 	}
 
 	&Body {
+		display: flex;
+		flex-direction: row;
+		gap: system.$default-gap;
+
+		@include desktop {
+			flex-direction: column;
+		}
 		& > * {
 			padding-bottom: system.$default-gap;
 		}
 		.imageBox {
 			min-height: 20rem;
+			width: 75%;
 			position: relative;
+
+			@include desktop {
+				width: 100%;
+			}
 		}
-		.category {
-			display: block;
-			font-size: 1.4rem;
-			color: hslac($clr-gray);
-			padding-top: system.$default-gap;
-		}
-		.title {
-			display: block;
-			font-size: 1.6rem;
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			gap: system.$default-gap;
+
+			.category {
+				display: block;
+				font-size: 1.6rem;
+				color: hslac($clr-gray);
+
+				@include desktop {
+					font-size: 1.4rem;
+					padding-top: system.$default-gap;
+				}
+			}
+			.title {
+				display: block;
+				font-size: 1.8rem;
+
+				@include desktop {
+					font-size: 1.6rem;
+				}
+			}
 		}
 	}
 
@@ -74,6 +111,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		min-height: 15rem;
+
+		@include desktop {
+			flex-direction: row;
+			min-height: 8rem;
+		}
+
 		.off {
 			display: block;
 		}
@@ -81,9 +125,13 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: baseline;
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 			font-weight: 500;
 			// line-height: 2.8rem;
+
+			@include desktop {
+				font-size: 1.4rem;
+			}
 
 			.old {
 				text-decoration: line-through;
@@ -98,6 +146,9 @@
 
 				.number {
 					font-size: 2.8rem;
+					@include desktop {
+						font-size: 2.8rem;
+					}
 				}
 
 				.currency {
@@ -109,10 +160,14 @@
 			background-color: hslac($clr-green);
 			color: hsl(0 0% 0%);
 			border-radius: math.div(system.$default-radius, 3);
-			padding: 2rem 4.5rem;
+			padding: 2.25rem 6rem;
 			border: none;
 			clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
 			cursor: pointer;
+
+			@include desktop {
+				padding: 2rem 4.5rem;
+			}
 		}
 	}
 }

@@ -1,0 +1,47 @@
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.imageSlider {
+	// background-image: url("/images/ameen-almayuf-OQ4tJVXMCYM-unsplash.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: system.$default-radius;
+	box-shadow: $box-shadow;
+	height: 100%;
+	overflow: hidden;
+	min-width: 0;
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.swiperSlide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.swiperSlide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

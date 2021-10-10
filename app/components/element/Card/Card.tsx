@@ -1,4 +1,3 @@
-import Script  from 'next/script';
 import Image from 'next/image';
 import cardStyle from './Card.module.scss';
 
@@ -56,14 +55,16 @@ export default function Card(props: iCard) {
           </div>
           <div className={cardStyle.cardBody}>
             <div className={cardStyle.imageBox}>
-                  <Image src={props.image} alt="product image" layout="fill" objectFit="contain"/>
+            <Image src={props.image} alt="product image" layout="fill" objectFit="contain" />
             </div>
+          <div className={cardStyle.text}>
             <span className={cardStyle.category}>
               {props.category}
             </span>
             <span className={cardStyle.title}>
               {props.title}
             </span>
+            </div>
           </div>
           <div className={cardStyle.cardFooter}>
           <button className={cardStyle.cartButton}></button>

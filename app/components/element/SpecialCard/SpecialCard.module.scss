@@ -12,12 +12,17 @@
 	border-radius: system.$default-radius;
 	box-shadow: $box-shadow;
 	color: #fff;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	position: relative;
 	overflow: hidden;
 	// max-width: 40rem; // control maximum size
 	padding: math.div(system.$default-gap, 2) system.$default-gap;
 	z-index: 5;
+	min-width: 0;
+
+	@include desktop {
+		font-size: 2rem;
+	}
 
 	& > * {
 		padding: math.div(system.$default-gap, 2) system.$default-gap;
@@ -109,10 +114,15 @@
 	&Body {
 		position: relative;
 		z-index: 10 !important;
+
 		.imageBox {
-			min-height: 20rem;
+			min-height: 17.5rem;
 			position: relative;
-			margin-top: -6rem;
+
+			@include desktop {
+				min-height: 20rem;
+				margin-top: -6rem;
+			}
 		}
 	}
 
@@ -125,8 +135,12 @@
 	span {
 		display: block;
 		&.title {
-			font-size: 2.8rem;
+			font-size: 2.4rem;
 			margin-top: 2rem;
+
+			@include desktop {
+				font-size: 2.8rem;
+			}
 		}
 	}
 }

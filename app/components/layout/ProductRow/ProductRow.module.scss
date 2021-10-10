@@ -1,3 +1,4 @@
+@use "/app/styles/abstract/" as *;
 @use "/app/styles/system";
 
 .productRow {
@@ -8,11 +9,22 @@
 
 	.rowDisplay {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		gap: system.$default-gap;
+		flex-wrap: wrap;
+
+		@include desktop {
+			flex-direction: row;
+			flex-wrap: nowrap;
+		}
 
 		> * {
-			flex-basis: 100%;
+			flex: 1 1 100%;
+			max-width: calc(100vw - (system.$mobile-padding * 2));
+
+			@include desktop {
+				max-width: auto;
+			}
 		}
 	}
 }

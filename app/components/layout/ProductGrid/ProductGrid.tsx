@@ -1,6 +1,6 @@
 import gridStyle from './ProductGrid.module.scss';
 
-import Card, {iCard, Banner} from '@/components/modules/Card/Card';
+import Card, {iCard, Banner} from '@/element/Card/Card';
 
 interface Props {
     title: string,
@@ -17,12 +17,7 @@ export default function ProductGrid(props: Props) {
             <div className={gridStyle.gridDisplay}>
                 {props.items.map(item => {
                     return (
-                        <>
                         <Card key={item.id} id={item.id} title={item.title} category={item.category} price={item.price} off={item.off} image={item.image} banner={Banner.Special}  />
-                        
-                        <Card key={item.id} id={item.id} title={item.title} category={item.category} price={item.price} off={item.off} image={item.image} banner={Banner.Off} />
-                    
-                        </>
                    );
                 })}
             </div>

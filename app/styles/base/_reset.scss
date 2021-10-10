@@ -62,7 +62,8 @@ html:focus-within {
 /* Set core body defaults */
 body {
 	min-height: 100vh;
-	text-rendering: optimizeSpeed;
+	//causes issues with swiper navigation button
+	// text-rend ering: optimizeSpeed;
 	line-height: 1.5;
 }
 

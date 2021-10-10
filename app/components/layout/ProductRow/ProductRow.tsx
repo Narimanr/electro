@@ -1,6 +1,6 @@
 import rowStyle from './ProductRow.module.scss';
 
-import Card, {iCard, Banner} from '@/components/modules/Card/Card';
+import Card, {iCard, Banner} from '@/element/Card/Card';
 
 interface Props {
     title: string,
