@@ -1,5 +1,8 @@
 import Image from 'next/image';
+
+
 import cardStyle from './Card.module.scss';
+
 
 export interface iCard {
     id: string, 
@@ -67,7 +70,9 @@ export default function Card(props: iCard) {
             </div>
           </div>
           <div className={cardStyle.cardFooter}>
-          <button className={cardStyle.cartButton}></button>
+          <button className={cardStyle.cartButton}>
+            <i className='bx bxs-cart bx-md'></i>
+          </button>
          
           <div className={cardStyle.price}>
             <span className={cardStyle.old}>

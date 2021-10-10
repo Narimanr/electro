@@ -1,0 +1,64 @@
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.nav {
+	background-color: hsl(0, 0%, 100%);
+	box-shadow: $box-shadow;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.8rem;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: system.$default-gap system.$mobile-padding;
+
+	@include desktop {
+		flex-direction: row;
+		padding: system.$default-gap system.$desktop-padding;
+	}
+
+	.logo {
+		position: relative;
+	}
+
+	.links {
+		ul {
+			display: flex;
+			gap: system.$default-gap;
+			flex-flow: column wrap;
+			list-style-type: none;
+			padding: 0;
+
+			@include desktop {
+				flex-flow: row nowrap;
+			}
+
+			li {
+				color: hslac($clr-black);
+				transition: color 0.2s;
+
+				&:hover {
+					color: hslac($clr-black, 70%);
+				}
+
+				&.active {
+					color: hslac($clr-green);
+
+					&:hover {
+						color: hslac($clr-green, 70%);
+					}
+				}
+			}
+		}
+	}
+
+	.contact {
+		justify-self: flex-start;
+		direction: ltr;
+		display: none;
+
+		@include desktop {
+			display: block;
+		}
+	}
+}

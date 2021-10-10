@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import  { iCard } from '@/element/Card/Card';
+import { iCard } from '@/element/Card/Card';
 import { iSpecialCard, Colors } from '@/element/SpecialCard/SpecialCard';
 import { Slide } from '@/components/element/Carousel/Carousel';
 

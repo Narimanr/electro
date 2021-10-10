@@ -18,8 +18,7 @@
 		"recommended"
 		"special-2"
 		"scroll"
-		"footer"
-		"copyright";
+		"footer";
 
 	background-color: hslac($background-color);
 
@@ -139,8 +138,5 @@
 
 .footer {
 	grid-area: footer;
-}
-
-.copyright {
-	grid-area: copyright;
+	padding: 0;
 }

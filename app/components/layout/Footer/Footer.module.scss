@@ -1,0 +1,113 @@
+@use "sass:math";
+
+@use "/app/styles/abstract/" as *;
+@use "/app/styles/system";
+
+.footer {
+	background-color: hslac($clr-dark-blue);
+	padding: system.$default-gap system.$mobile-padding;
+	color: hslac($clr-grey);
+
+	@include desktop {
+		padding: system.$default-gap system.$desktop-padding;
+	}
+
+	&Grid {
+		display: flex;
+		flex-direction: column;
+		gap: system.$default-gap;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		@include desktop {
+			flex-direction: row;
+			gap: system.$default-gap * 4;
+		}
+
+		& > * {
+			flex-basis: 100%;
+		}
+
+		.logo {
+			position: relative;
+		}
+
+		.links {
+			ul {
+				display: flex;
+				gap: system.$default-gap;
+				flex-flow: column wrap;
+				list-style-type: none;
+				padding: 0;
+				font-size: 1.8rem;
+
+				li {
+					color: hslac($clr-grey);
+					transition: color 0.2s;
+
+					&:hover {
+						color: hslac($clr-green);
+					}
+				}
+			}
+		}
+
+		.description {
+			font-size: 1.4rem;
+			line-height: 2.8rem;
+			text-align: justify;
+			display: flex;
+			flex-direction: column;
+			gap: system.$default-gap;
+
+			.socials {
+				display: flex;
+				flex-direction: row;
+				gap: math.div(system.$default-gap, 2);
+
+				i {
+					color: hsla(0, 0, 80%);
+					background-color: hsla(208, 22, 20%);
+					border-radius: 50%;
+					text-align: center;
+					padding: 1rem;
+					transition: background-color 0.5s, color 0.2s;
+
+					&:hover {
+						color: hslac($clr-green);
+						background-color: hsla(208, 22, 90%);
+					}
+				}
+			}
+
+			.payments {
+				display: flex;
+				flex-direction: row;
+				gap: system.$default-gap;
+
+				i {
+					color: hsla(0, 0, 80%);
+					text-align: center;
+					padding: 1rem;
+					transition: color 0.2s;
+
+					&:hover {
+						color: hslac($clr-blue);
+					}
+				}
+			}
+		}
+	}
+}
+
+.copyright {
+	background-color: hslac($clr-dark-blue);
+	color: hslac($clr-grey);
+	font-size: 1.2rem;
+	border-top: 1px solid hslac($clr-grey, 10%);
+	padding: system.$default-gap system.$mobile-padding;
+
+	@include desktop {
+		padding: system.$default-gap system.$desktop-padding;
+	}
+}
