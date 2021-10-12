@@ -8,10 +8,9 @@
 	display: grid;
 	// grid-auto-rows: minmax(1fr, max-content);
 	grid-auto-rows: auto;
-	grid-template-columns: 1fr;
+	grid-template-columns: minmax(0, 1fr);
 	grid-template-areas:
 		"navbar"
-		"categories"
 		"hero"
 		"sale"
 		"special"
