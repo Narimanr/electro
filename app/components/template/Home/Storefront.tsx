@@ -69,9 +69,10 @@ export default function Storefront(props: PageProps) {
                 </li>
               </ul>
             </div>
+            <div className={styles.whyOverlay}>
           </div>
-          <div className={styles.whyOverlay}>
           </div>
+          
         </div>
 
         <div className={styles.recommended}>

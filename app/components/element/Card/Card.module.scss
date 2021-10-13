@@ -107,12 +107,13 @@
 
 	&Footer {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		min-height: 15rem;
+		flex-wrap: wrap;
 
 		@include desktop {
-			flex-direction: row;
 			min-height: 8rem;
 		}
 
